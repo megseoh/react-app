@@ -26379,6 +26379,12 @@
 
 	'use strict';
 
+	var _Nav = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Nav.scss\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var React = __webpack_require__(1);
 
 	var _require = __webpack_require__(172),
@@ -26395,21 +26401,21 @@
 				React.createElement(
 					'h2',
 					null,
-					'React Notes'
+					'React Notes App'
 				),
 				React.createElement(
 					IndexLink,
-					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Observation List'
 				),
 				React.createElement(
 					Link,
-					{ to: '/write', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+					{ to: '/write', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Add Observation'
 				),
 				React.createElement(
 					Link,
-					{ to: '/view', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+					{ to: '/view', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Observation Details'
 				)
 			);
@@ -26444,18 +26450,36 @@
 /* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(1);
 
 	var AddObservation = React.createClass({
-		displayName: 'AddObservation',
+		displayName: "AddObservation",
 
 		render: function render() {
 			return React.createElement(
-				'h3',
+				"div",
 				null,
-				'Add Observation Component'
+				React.createElement(
+					"h3",
+					null,
+					"Add Observation Component"
+				),
+				React.createElement(
+					"form",
+					null,
+					"Observation Title ",
+					React.createElement("input", { type: "text", placeholder: "What is your observation about?" }),
+					React.createElement("br", null),
+					React.createElement("textarea", null),
+					React.createElement("br", null),
+					React.createElement(
+						"button",
+						null,
+						"Create Observation"
+					)
+				)
 			);
 		}
 	});

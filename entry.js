@@ -1,9 +1,8 @@
-// no longer using, saving for reference
-// now entry.js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
+// Import my React components
 import Main from 'Main';
 import ObservationList from 'ObservationList';
 import AddObservation from 'AddObservation';

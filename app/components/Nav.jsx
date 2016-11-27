@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 import styles from './Nav.scss';
 var {Link, IndexLink} = require('react-router');
 

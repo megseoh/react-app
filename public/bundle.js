@@ -46,29 +46,44 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(34);
+	var _react = __webpack_require__(1);
 
-	var _require = __webpack_require__(172),
-	    Route = _require.Route,
-	    Router = _require.Router,
-	    IndexRoute = _require.IndexRoute,
-	    hashHistory = _require.hashHistory;
+	var _react2 = _interopRequireDefault(_react);
 
-	var Main = __webpack_require__(227);
-	var ObservationList = __webpack_require__(233);
-	var AddObservation = __webpack_require__(234);
-	var ObservationDetails = __webpack_require__(235);
+	var _reactDom = __webpack_require__(34);
 
-	ReactDOM.render(React.createElement(
-	  Router,
-	  { history: hashHistory },
-	  React.createElement(
-	    Route,
-	    { path: '/', component: Main },
-	    React.createElement(Route, { path: 'write', component: AddObservation }),
-	    React.createElement(Route, { path: 'view', component: ObservationDetails }),
-	    React.createElement(IndexRoute, { component: ObservationList })
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _reactRouter = __webpack_require__(172);
+
+	var _Main = __webpack_require__(227);
+
+	var _Main2 = _interopRequireDefault(_Main);
+
+	var _ObservationList = __webpack_require__(233);
+
+	var _ObservationList2 = _interopRequireDefault(_ObservationList);
+
+	var _AddObservation = __webpack_require__(234);
+
+	var _AddObservation2 = _interopRequireDefault(_AddObservation);
+
+	var _ObservationDetails = __webpack_require__(235);
+
+	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// Import my React components
+	_reactDom2.default.render(_react2.default.createElement(
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _Main2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: 'write', component: _AddObservation2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'view', component: _ObservationDetails2.default }),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _ObservationList2.default })
 	  )
 	), document.getElementById('app'));
 
@@ -26350,18 +26365,23 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var Nav = __webpack_require__(228);
 
-	var Main = React.createClass({
+	var Main = _react2.default.createClass({
 		displayName: 'Main',
 
 		render: function render() {
-			return React.createElement(
+			return _react2.default.createElement(
 				'div',
 				null,
-				React.createElement(Nav, null),
-				React.createElement(
+				_react2.default.createElement(Nav, null),
+				_react2.default.createElement(
 					'h2',
 					null,
 					'Main Component'
@@ -26379,41 +26399,43 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
 	var _Nav = __webpack_require__(229);
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var React = __webpack_require__(1);
-
 	var _require = __webpack_require__(172),
 	    Link = _require.Link,
 	    IndexLink = _require.IndexLink;
 
-	var Nav = React.createClass({
+	var Nav = _react2.default.createClass({
 		displayName: 'Nav',
 
 		render: function render() {
-			return React.createElement(
+			return _react2.default.createElement(
 				'nav',
 				null,
-				React.createElement(
+				_react2.default.createElement(
 					'h2',
 					null,
 					'React Notes App'
 				),
-				React.createElement(
+				_react2.default.createElement(
 					IndexLink,
 					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Observation List'
 				),
-				React.createElement(
+				_react2.default.createElement(
 					Link,
 					{ to: '/write', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Add Observation'
 				),
-				React.createElement(
+				_react2.default.createElement(
 					Link,
 					{ to: '/view', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
 					'Observation Details'
@@ -26780,13 +26802,17 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
+	var _react = __webpack_require__(1);
 
-	var ObservationList = React.createClass({
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ObservationList = _react2.default.createClass({
 		displayName: 'ObservationList',
 
 		render: function render() {
-			return React.createElement(
+			return _react2.default.createElement(
 				'h3',
 				null,
 				'Observation List Component'
@@ -26802,29 +26828,33 @@
 
 	"use strict";
 
-	var React = __webpack_require__(1);
+	var _react = __webpack_require__(1);
 
-	var AddObservation = React.createClass({
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var AddObservation = _react2.default.createClass({
 		displayName: "AddObservation",
 
 		render: function render() {
-			return React.createElement(
+			return _react2.default.createElement(
 				"div",
 				null,
-				React.createElement(
+				_react2.default.createElement(
 					"h3",
 					null,
 					"Add Observation Component"
 				),
-				React.createElement(
+				_react2.default.createElement(
 					"form",
 					null,
 					"Observation Title ",
-					React.createElement("input", { type: "text", placeholder: "What is your observation about?" }),
-					React.createElement("br", null),
-					React.createElement("textarea", null),
-					React.createElement("br", null),
-					React.createElement(
+					_react2.default.createElement("input", { type: "text", placeholder: "What is your observation about?" }),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement("textarea", null),
+					_react2.default.createElement("br", null),
+					_react2.default.createElement(
 						"button",
 						null,
 						"Create Observation"
@@ -26842,13 +26872,17 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
+	var _react = __webpack_require__(1);
 
-	var ObservationDetails = React.createClass({
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ObservationDetails = _react2.default.createClass({
 		displayName: 'ObservationDetails',
 
 		render: function render() {
-			return React.createElement(
+			return _react2.default.createElement(
 				'h3',
 				null,
 				'Observation Details Component'

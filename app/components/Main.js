@@ -1,10 +1,11 @@
 import React from 'react';
-var Nav = require('Nav');
+import Nav from 'Nav';
+import styles from './Main.scss';
 
 var Main = React.createClass({
 	render: function() {
 		return (
-			<div>
+			<div className={ styles.container }>
 				<Nav />
 				<h2>Main Component</h2>
 				{this.props.children}

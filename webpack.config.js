@@ -7,11 +7,13 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      Main: 'app/components/Main.jsx',
-      Nav: 'app/components/Nav.jsx',
-      ObservationList: 'app/components/ObservationList.jsx',
-      AddObservation: 'app/components/AddObservation.jsx',
-      ObservationDetails: 'app/components/ObservationDetails.jsx'
+      Login: 'app/components/Login.js',
+      Main: 'app/components/Main.js',
+      Nav: 'app/components/Nav.js',
+      ObservationList: 'app/components/ObservationList.js',
+      AddObservation: 'app/components/AddObservation.js',
+      ObservationDetails: 'app/components/ObservationDetails.js',
+      ObservationFields: 'app/components/ObservationFields.js'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -31,5 +33,8 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  devServer: {
+      historyApiFallback: true
   }
 };

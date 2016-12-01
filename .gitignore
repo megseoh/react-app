@@ -40,3 +40,8 @@ Thumbs.db
 
 config.json
 .sass-cache
+
+
+# misc
+.env
+npm-debug.log

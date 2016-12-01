@@ -56,36 +56,42 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _Main = __webpack_require__(227);
+	var _Login = __webpack_require__(227);
+
+	var _Login2 = _interopRequireDefault(_Login);
+
+	var _Main = __webpack_require__(232);
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _ObservationList = __webpack_require__(233);
+	var _ObservationList = __webpack_require__(238);
 
 	var _ObservationList2 = _interopRequireDefault(_ObservationList);
 
-	var _AddObservation = __webpack_require__(234);
+	var _ObservationFields = __webpack_require__(240);
 
-	var _AddObservation2 = _interopRequireDefault(_AddObservation);
+	var _ObservationFields2 = _interopRequireDefault(_ObservationFields);
 
-	var _ObservationDetails = __webpack_require__(235);
+	var _ObservationDetails = __webpack_require__(241);
 
 	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Import my React components
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _Main2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: 'write', component: _AddObservation2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'login', component: _Login2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'write', component: _ObservationFields2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'view', component: _ObservationDetails2.default }),
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _ObservationList2.default })
 	  )
 	), document.getElementById('app'));
+
+	// Import my React components
 
 /***/ },
 /* 1 */
@@ -26369,101 +26375,66 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Login = __webpack_require__(228);
+
+	var _Login2 = _interopRequireDefault(_Login);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Nav = __webpack_require__(228);
+	var Login = _react2.default.createClass({
+	  displayName: 'Login',
 
-	var Main = _react2.default.createClass({
-		displayName: 'Main',
+	  // getInitialState: function() {
+	  //   return {
+	  //     login: {
+	  //       mode: 'login',
+	  //       email: '',
+	  //       password: '',
+	  //       name: ''
+	  //     }
+	  //   }
+	  // },
 
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(Nav, null),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'Main Component'
-				),
-				this.props.children
-			);
-		}
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'form',
+	      { className: _Login2.default.container },
+	      _react2.default.createElement(
+	        'label',
+	        null,
+	        _react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'login' }),
+	        'Login'
+	      ),
+	      _react2.default.createElement(
+	        'label',
+	        null,
+	        _react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'signup' }),
+	        'Sign-up'
+	      )
+	    );
+	  }
 	});
 
-	module.exports = Main;
+	module.exports = Login;
 
 /***/ },
 /* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Nav = __webpack_require__(229);
-
-	var _Nav2 = _interopRequireDefault(_Nav);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var _require = __webpack_require__(172),
-	    Link = _require.Link,
-	    IndexLink = _require.IndexLink;
-
-	var Nav = _react2.default.createClass({
-		displayName: 'Nav',
-
-		render: function render() {
-			return _react2.default.createElement(
-				'nav',
-				null,
-				_react2.default.createElement(
-					'h2',
-					null,
-					'React Notes App'
-				),
-				_react2.default.createElement(
-					IndexLink,
-					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
-					'Observation List'
-				),
-				_react2.default.createElement(
-					Link,
-					{ to: '/write', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
-					'Add Observation'
-				),
-				_react2.default.createElement(
-					Link,
-					{ to: '/view', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
-					'Observation Details'
-				)
-			);
-		}
-	});
-
-	module.exports = Nav;
-
-/***/ },
-/* 229 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(230);
+	var content = __webpack_require__(229);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(232)(content, {});
+	var update = __webpack_require__(231)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Nav.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Nav.scss");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Login.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Login.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -26473,23 +26444,24 @@
 	}
 
 /***/ },
-/* 230 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(231)();
+	exports = module.exports = __webpack_require__(230)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".aYMU8p1pFIrbMuoFeF6ue {\n  text-decoration: none; }\n", ""]);
+	exports.push([module.id, "label {\n  margin-right: 20px;\n  color: #999;\n  text-transform: uppercase;\n  font-weight: 200; }\n\ninput {\n  margin-right: 10px; }\n\n._2z8Nm2oWoVUt67j4ATrEed {\n  width: 500px;\n  margin: auto;\n  margin-top: 100px; }\n\n._1hhOM4O-BWEYXC2NYX53Yn {\n  background-color: #a31e15;\n  color: white;\n  font-weight: bold;\n  margin-bottom: 10px;\n  border-radius: 5px;\n  padding: 10px; }\n", ""]);
 
 	// exports
 	exports.locals = {
-		"navlink": "aYMU8p1pFIrbMuoFeF6ue"
+		"container": "_2z8Nm2oWoVUt67j4ATrEed",
+		"error": "_1hhOM4O-BWEYXC2NYX53Yn"
 	};
 
 /***/ },
-/* 231 */
+/* 230 */
 /***/ function(module, exports) {
 
 	/*
@@ -26545,7 +26517,7 @@
 
 
 /***/ },
-/* 232 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -26797,6 +26769,46 @@
 
 
 /***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Nav = __webpack_require__(233);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	var _Main = __webpack_require__(236);
+
+	var _Main2 = _interopRequireDefault(_Main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Main = _react2.default.createClass({
+		displayName: 'Main',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: _Main2.default.container },
+				_react2.default.createElement(_Nav2.default, null),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'Main Component'
+				),
+				this.props.children
+			);
+		}
+	});
+
+	module.exports = Main;
+
+/***/ },
 /* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -26806,6 +26818,150 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Nav = __webpack_require__(234);
+
+	var _Nav2 = _interopRequireDefault(_Nav);
+
+	var _reactRouter = __webpack_require__(172);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Nav = _react2.default.createClass({
+		displayName: 'Nav',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'nav',
+				null,
+				_react2.default.createElement(
+					'h1',
+					null,
+					'React Notes App'
+				),
+				_react2.default.createElement(
+					_reactRouter.IndexLink,
+					{ to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
+					'Observation List'
+				),
+				_react2.default.createElement(
+					_reactRouter.Link,
+					{ to: '/write', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
+					'Add Observation'
+				),
+				_react2.default.createElement(
+					_reactRouter.Link,
+					{ to: '/view', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
+					'Observation Details'
+				),
+				_react2.default.createElement(
+					_reactRouter.Link,
+					{ to: '/login', activeClassName: 'active', activeStyle: { fontWeight: 'bold' }, className: _Nav2.default.navlink },
+					'Login'
+				)
+			);
+		}
+	});
+
+	module.exports = Nav;
+
+/***/ },
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(235);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(231)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Nav.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Nav.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(230)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "h1 {\n  margin-right: 20px;\n  display: inline-block;\n  font-size: 4.4rem;\n  font-weight: 500; }\n\n.aYMU8p1pFIrbMuoFeF6ue {\n  text-decoration: none;\n  padding-right: 20px; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"navlink": "aYMU8p1pFIrbMuoFeF6ue"
+	};
+
+/***/ },
+/* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(237);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(231)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Main.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./Main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(230)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "._2yLtAFZrehNr_sOQvRrJ3t {\n  border: 1px solid #ccc;\n  padding: 20px; }\n", ""]);
+
+	// exports
+	exports.locals = {
+		"container": "_2yLtAFZrehNr_sOQvRrJ3t"
+	};
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _AddObservation = __webpack_require__(239);
+
+	var _AddObservation2 = _interopRequireDefault(_AddObservation);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ObservationList = _react2.default.createClass({
@@ -26813,9 +26969,14 @@
 
 		render: function render() {
 			return _react2.default.createElement(
-				'h3',
+				'div',
 				null,
-				'Observation List Component'
+				_react2.default.createElement(
+					'h3',
+					null,
+					'Observation List Component'
+				),
+				_react2.default.createElement(_AddObservation2.default, null)
 			);
 		}
 	});
@@ -26823,7 +26984,7 @@
 	module.exports = ObservationList;
 
 /***/ },
-/* 234 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26837,6 +26998,14 @@
 	var AddObservation = _react2.default.createClass({
 		displayName: "AddObservation",
 
+		onButtonClick: function onButtonClick(e) {
+			e.preventDefault();
+			console.log("Add Observation Button Clicked!");
+		},
+		onButtonTwoClick: function onButtonTwoClick(e) {
+			e.preventDefault();
+			console.log("Add Observation Button Two Clicked!");
+		},
 		render: function render() {
 			return _react2.default.createElement(
 				"div",
@@ -26848,17 +27017,18 @@
 				),
 				_react2.default.createElement(
 					"form",
-					null,
-					"Observation Title ",
-					_react2.default.createElement("input", { type: "text", placeholder: "What is your observation about?" }),
-					_react2.default.createElement("br", null),
-					_react2.default.createElement("textarea", null),
-					_react2.default.createElement("br", null),
+					{ onSubmit: this.onButtonClick },
+					_react2.default.createElement("input", { type: "text" }),
 					_react2.default.createElement(
 						"button",
 						null,
-						"Create Observation"
+						"Add New"
 					)
+				),
+				_react2.default.createElement(
+					"button",
+					{ onClick: this.onButtonTwoClick },
+					"Add New Observation"
 				)
 			);
 		}
@@ -26867,7 +27037,81 @@
 	module.exports = AddObservation;
 
 /***/ },
-/* 235 */
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ObservationDetails = __webpack_require__(241);
+
+	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ObservationFields = _react2.default.createClass({
+		displayName: 'ObservationFields',
+
+		getInitialState: function getInitialState() {
+			return {
+				title: "My first Title",
+				content: "Jelly pastry bear claw muffin candy canes jelly beans chocolate candy canes. Carrot cake tart biscuit danish gummi bears marzipan sweet roll danish pastry.",
+				image: "https://s-media-cache-ak0.pinimg.com/736x/2e/0e/be/2e0ebe1d29712240d3b29e0051de96c6.jpg",
+				tags: ["green", "blue", "red"]
+			};
+		},
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(_ObservationDetails2.default, { title: this.state.title, content: this.state.content, image: this.state.image, tags: this.state.tags }),
+				_react2.default.createElement(
+					'h3',
+					null,
+					'Observation Fields Component'
+				),
+				_react2.default.createElement(
+					'form',
+					null,
+					_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement('input', { type: 'text', onChange: this.updateFields.title, placeholder: 'What is your observation about?' })
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement('textarea', { onChange: this.updateFields.content })
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement('input', { type: 'file', onChange: this.updateFields })
+					),
+					_react2.default.createElement(
+						'button',
+						{ onClick: this.doSomething },
+						'Create Observation'
+					)
+				)
+			);
+		},
+		updateFields: function updateFields(event) {
+			this.setState({
+				title: event.target.value,
+				content: event.target.value,
+				image: event.target.value
+			});
+		}
+	});
+
+	module.exports = ObservationFields;
+
+/***/ },
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26883,9 +27127,29 @@
 
 		render: function render() {
 			return _react2.default.createElement(
-				'h3',
+				'div',
 				null,
-				'Observation Details Component'
+				_react2.default.createElement(
+					'h3',
+					null,
+					'Observation Details Component'
+				),
+				_react2.default.createElement(
+					'h3',
+					null,
+					this.props.title
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					this.props.content
+				),
+				_react2.default.createElement('img', { src: this.props.image }),
+				_react2.default.createElement(
+					'p',
+					null,
+					this.props.tags
+				)
 			);
 		}
 	});

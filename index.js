@@ -7,7 +7,8 @@ var webpack = require('webpack');
 var webpackMiddleware = require('webpack-dev-middleware');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/notes');
+// mongoose.connect('mongodb://localhost/notes');
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/notes");
 
 // var bodyParser = require('body-parser');
 // app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.get('*', (req, res) => {
 	}
 );
 
-app.listen(8081, function() {
-	console.log("Express server is running on port 8081");
-});
+// app.listen(8081, function() {
+// 	console.log("Express server is running on port 8081");
+// });
+app.listen(process.env.PORT || 8081);

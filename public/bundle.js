@@ -26382,37 +26382,78 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Login = _react2.default.createClass({
-	  displayName: 'Login',
+			displayName: 'Login',
 
-	  // getInitialState: function() {
-	  //   return {
-	  //     login: {
-	  //       mode: 'login',
-	  //       email: '',
-	  //       password: '',
-	  //       name: ''
-	  //     }
-	  //   }
-	  // },
-
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'form',
-	      { className: _Login2.default.container },
-	      _react2.default.createElement(
-	        'label',
-	        null,
-	        _react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'login' }),
-	        'Login'
-	      ),
-	      _react2.default.createElement(
-	        'label',
-	        null,
-	        _react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'signup' }),
-	        'Sign-up'
-	      )
-	    );
-	  }
+			getInitialState: function getInitialState() {
+					return {
+							login: {
+									mode: 'login',
+									email: '',
+									password: '',
+									name: ''
+							}
+					};
+			},
+			render: function render() {
+					return _react2.default.createElement(
+							'form',
+							{ className: _Login2.default.container },
+							_react2.default.createElement(
+									'div',
+									null,
+									_react2.default.createElement(
+											'label',
+											null,
+											_react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'login', checked: this.state.mode == 'login', onChange: this.setMode }),
+											'Login'
+									),
+									_react2.default.createElement(
+											'label',
+											null,
+											_react2.default.createElement('input', { type: 'radio', name: 'mode', value: 'signup', checked: this.state.mode == 'signup', onChange: this.setMode }),
+											'Sign-up'
+									)
+							),
+							_react2.default.createElement(
+									'div',
+									null,
+									_react2.default.createElement(
+											'label',
+											{ 'for': 'email' },
+											'Email'
+									),
+									_react2.default.createElement('input', { type: 'text', name: 'email', value: this.state.email, onChange: this.setEmail })
+							),
+							_react2.default.createElement(
+									'div',
+									null,
+									_react2.default.createElement(
+											'label',
+											{ 'for': 'password' },
+											'Password'
+									),
+									_react2.default.createElement('input', { type: 'password', name: 'password', value: this.state.password, onChange: this.setPassword })
+							),
+							_react2.default.createElement(
+									'div',
+									null,
+									_react2.default.createElement(
+											'button',
+											{ onClick: this.login },
+											'Login'
+									)
+							)
+					);
+			},
+			setEmail: function setEmail(event) {
+					this.setState({ email: event.target.value });
+			},
+			setPassword: function setPassword(event) {
+					this.setState({ password: event.target.value });
+			},
+			setMode: function setMode(event) {
+					this.setState({ mode: event.target.value });
+			}
 	});
 
 	module.exports = Login;
@@ -26899,7 +26940,7 @@
 
 
 	// module
-	exports.push([module.id, "h1 {\n  margin-right: 20px;\n  display: inline-block;\n  font-size: 4.4rem;\n  font-weight: 500; }\n\n.aYMU8p1pFIrbMuoFeF6ue {\n  text-decoration: none;\n  padding-right: 20px; }\n", ""]);
+	exports.push([module.id, "h1 {\n  margin-right: 20px;\n  font-size: 4.4rem;\n  font-weight: 500; }\n\n.aYMU8p1pFIrbMuoFeF6ue {\n  text-decoration: none;\n  padding-right: 20px; }\n", ""]);
 
 	// exports
 	exports.locals = {

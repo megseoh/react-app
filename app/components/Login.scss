@@ -1,12 +1,16 @@
 :local {
-  label {
-    margin-right: 20px;
-    color: #999;
-    text-transform: uppercase;
-    font-weight: 200;
-  }
-  input {
-    margin-right: 10px;
+  .mode {
+    label {
+      margin-right: 20px;
+      color: #999;
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+    input {
+      margin-right: 10px;
+    }
+
+    margin-bottom: 20px;
   }
   .container {
     width: 500px;
@@ -14,7 +18,7 @@
     margin-top: 100px;
   }
   .error {
-    background-color: #a31e15;
+    background-color: #e74c3c;
     color: white;
     font-weight: bold;
     margin-bottom: 10px;

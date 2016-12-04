@@ -7,13 +7,14 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
+      AddObservation: 'app/components/AddObservation.js',
+      Field: 'app/components/Field.js',
       Login: 'app/components/Login.js',
       Main: 'app/components/Main.js',
       Nav: 'app/components/Nav.js',
-      ObservationList: 'app/components/ObservationList.js',
-      AddObservation: 'app/components/AddObservation.js',
       ObservationDetails: 'app/components/ObservationDetails.js',
-      ObservationFields: 'app/components/ObservationFields.js'
+      ObservationFields: 'app/components/ObservationFields.js',
+      ObservationList: 'app/components/ObservationList.js'
     },
     extensions: ['', '.js', '.jsx']
   },

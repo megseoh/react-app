@@ -68,11 +68,11 @@
 
 	var _ObservationList2 = _interopRequireDefault(_ObservationList);
 
-	var _ObservationFields = __webpack_require__(242);
+	var _ObservationFields = __webpack_require__(245);
 
 	var _ObservationFields2 = _interopRequireDefault(_ObservationFields);
 
-	var _ObservationDetails = __webpack_require__(243);
+	var _ObservationDetails = __webpack_require__(242);
 
 	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
 
@@ -26467,12 +26467,11 @@
 	    });
 	  },
 
-	  updateField: function updateField(evt) {
+	  updateField: function updateField(event) {
 	    var login = this.state.login;
-	    login[evt.target.name] = evt.target.value;
+	    login[event.target.name] = event.target.value;
 	    this.setState({ login: login });
 	  }
-
 	});
 
 	module.exports = Login;
@@ -37289,6 +37288,12 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -37297,24 +37302,84 @@
 
 	var _AddObservation2 = _interopRequireDefault(_AddObservation);
 
+	var _ObservationDetails = __webpack_require__(242);
+
+	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ObservationList = _react2.default.createClass({
-		displayName: 'ObservationList',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h3',
-					null,
-					'Observation List Component'
-				),
-				_react2.default.createElement(_AddObservation2.default, null)
-			);
-		}
-	});
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// http://stackoverflow.com/questions/38742334/what-is-right-way-to-do-api-call-in-react-js
+	var ObservationList = function (_React$Component) {
+	  _inherits(ObservationList, _React$Component);
+
+	  function ObservationList(props) {
+	    _classCallCheck(this, ObservationList);
+
+	    var _this = _possibleConstructorReturn(this, (ObservationList.__proto__ || Object.getPrototypeOf(ObservationList)).call(this, props));
+
+	    var sample = {
+	      title: "My first Title",
+	      content: "Jelly pastry bear claw muffin candy canes jelly beans chocolate candy canes. Carrot cake tart biscuit danish gummi bears marzipan sweet roll danish pastry.",
+	      image: "https://s-media-cache-ak0.pinimg.com/736x/2e/0e/be/2e0ebe1d29712240d3b29e0051de96c6.jpg",
+	      tags: ["green", "blue", "red"]
+	    };
+
+	    _this.state = { notes: [sample] };
+	    console.log({
+	      state: _this.state
+	    });
+	    return _this;
+	  }
+
+	  _createClass(ObservationList, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      // this.ObservationList();
+	    }
+	  }, {
+	    key: 'ObservationList',
+	    value: function ObservationList() {
+	      return $.getJSON('https://randomuser.me/api/').then(function (data) {
+	        return data.results;
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      if (this.state.notes === null) {
+	        return _react2.default.createElement('span', null);
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Observation List Component'
+	          ),
+	          this.state.notes.map(function (note, i) {
+	            return _react2.default.createElement(_ObservationDetails2.default, { key: note.id, title: note.title, content: note.content, image: note.image, tags: note.tags });
+	          }),
+	          _react2.default.createElement(_AddObservation2.default, null)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ObservationList;
+	}(_react2.default.Component);
+
+	exports.default = ObservationList;
+
 
 	module.exports = ObservationList;
 
@@ -37387,22 +37452,105 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var ObservationFields = _react2.default.createClass({
-		displayName: 'ObservationFields',
+	//TODO: need to actually create & add these styles
 
-		getInitialState: function getInitialState() {
-			return {
-				title: "My first Title",
-				content: "Jelly pastry bear claw muffin candy canes jelly beans chocolate candy canes. Carrot cake tart biscuit danish gummi bears marzipan sweet roll danish pastry.",
-				image: "https://s-media-cache-ak0.pinimg.com/736x/2e/0e/be/2e0ebe1d29712240d3b29e0051de96c6.jpg",
-				tags: ["green", "blue", "red"]
-			};
-		},
+	var ObservationDetails = _react2.default.createClass({
+		displayName: 'ObservationDetails',
+
 		render: function render() {
 			return _react2.default.createElement(
 				'div',
 				null,
-				_react2.default.createElement(_ObservationDetails2.default, { title: this.state.title, content: this.state.content, image: this.state.image, tags: this.state.tags }),
+				_react2.default.createElement(
+					'h3',
+					null,
+					'Observation Details Component'
+				),
+				_react2.default.createElement(
+					'h3',
+					{ className: _ObservationDetails2.default.title },
+					this.props.title
+				),
+				_react2.default.createElement(
+					'p',
+					{ className: _ObservationDetails2.default.content },
+					this.props.content
+				),
+				_react2.default.createElement('img', { className: _ObservationDetails2.default.image, src: this.props.image }),
+				_react2.default.createElement(
+					'p',
+					{ className: _ObservationDetails2.default.tags },
+					this.props.tags
+				)
+			);
+		}
+	});
+
+	module.exports = ObservationDetails;
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(244);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(232)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./ObservationDetails.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./ObservationDetails.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 244 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(231)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ObservationDetails = __webpack_require__(242);
+
+	var _ObservationDetails2 = _interopRequireDefault(_ObservationDetails);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ObservationFields = _react2.default.createClass({
+		displayName: 'ObservationFields',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
 				_react2.default.createElement(
 					'h3',
 					null,
@@ -37433,63 +37581,10 @@
 					)
 				)
 			);
-		},
-		updateFields: function updateFields(event) {
-			this.setState({
-				title: event.target.value,
-				content: event.target.value,
-				image: event.target.value
-			});
 		}
 	});
 
 	module.exports = ObservationFields;
-
-/***/ },
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var ObservationDetails = _react2.default.createClass({
-		displayName: 'ObservationDetails',
-
-		render: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h3',
-					null,
-					'Observation Details Component'
-				),
-				_react2.default.createElement(
-					'h3',
-					null,
-					this.props.title
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					this.props.content
-				),
-				_react2.default.createElement('img', { src: this.props.image }),
-				_react2.default.createElement(
-					'p',
-					null,
-					this.props.tags
-				)
-			);
-		}
-	});
-
-	module.exports = ObservationDetails;
 
 /***/ }
 /******/ ]);

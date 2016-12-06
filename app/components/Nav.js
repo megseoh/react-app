@@ -7,9 +7,9 @@ var Nav = React.createClass({
 		return (
 			<nav>
 				<h1>React Notes App</h1>
-				<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Observation List</IndexLink>
-				<Link to="/write" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Add Observation</Link>
-				<Link to="/view" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Observation Details</Link>
+				<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Note List</IndexLink>
+				<Link to="/write" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Add Note</Link>
+				<Link to="/view" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Note Details</Link>
 				<Link to="/login" activeClassName="active" activeStyle={{fontWeight: 'bold'}} className={ styles.navlink }>Login</Link>
 			</nav>
 		);

@@ -1,9 +1,9 @@
 import React from 'react';
-import AddObservation from 'AddObservation';
-import ObservationDetails from 'ObservationDetails';
+import AddNote from 'AddNote';
+import NoteDetails from 'NoteDetails';
 
 // http://stackoverflow.com/questions/38742334/what-is-right-way-to-do-api-call-in-react-js
-export default class ObservationList extends React.Component {
+export default class NoteList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,10 +22,10 @@ export default class ObservationList extends React.Component {
   }
 
   componentDidMount() {
-    // this.ObservationList();
+    // this.NoteList();
   }
 
-  ObservationList(){
+  NoteList(){
 	  return $.getJSON('/api/notes')	//TODO: connect to my database
 	  .then(function(data) {
 	    return data.results;
@@ -38,16 +38,16 @@ export default class ObservationList extends React.Component {
 		}
     return (
       <div className="row">
-        <h3>Observation List Component</h3>
+        <h3>Note List Component</h3>
         {this.state.notes.map((note, i) =>{
           return(
-            <ObservationDetails key={ note.id }title={ note.title } content={ note.content } image={ note.image } tags={ note.tags } />
+            <NoteDetails key={ note.id } title={ note.title } content={ note.content } image={ note.image } tags={ note.tags } />
           )
         })}
-        <AddObservation />
+        <AddNote />
       </div>
     )
   }
 }
 
-module.exports = ObservationList;
+module.exports = NoteList;

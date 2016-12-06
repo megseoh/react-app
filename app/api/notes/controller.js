@@ -13,7 +13,7 @@ exports.create = function(req, res) {
   note.content = req.body.content;
   note.image = req.body.image;
   note.tags = req.body.tags;
-  note.user = '5834b08bb7395187b292be38';
+  // note.user = '5834b08bb7395187b292be38';
 
   note.save()
   .then(function(note) {
@@ -47,7 +47,7 @@ exports.update = function(req, res) {
   	note.content = req.body.content;
   	note.image = req.body.image;
   	note.tags = req.body.tags;
-  	note.user = '5834b08bb7395187b292be38';
+  	// note.user = '5834b08bb7395187b292be38';
 
     note.save()
     .then(function(note) {

@@ -9,15 +9,16 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
-      AddObservation: 'app/components/AddObservation.js',
-      EditObservation: 'app/components/EditObservation.js',
-      Fields: 'app/components/Fields.js',
+      App: 'app/components/App.js',
+      AddNote: 'app/components/AddNote.js',
+      CommentList: 'app/components/CommentList.js',
+      EditNote: 'app/components/EditNote.js',
+      Field: 'app/components/Field.js',
       Login: 'app/components/Login.js',
-      Main: 'app/components/Main.js',
       Nav: 'app/components/Nav.js',
-      ObservationDetails: 'app/components/ObservationDetails.js',
-      ObservationField: 'app/components/ObservationField.js',
-      ObservationList: 'app/components/ObservationList.js'
+      NoteDetails: 'app/components/NoteDetails.js',
+      NoteField: 'app/components/NoteField.js',
+      NoteList: 'app/components/NoteList.js'
     },
     extensions: ['', '.js', '.jsx']
   },

@@ -4,18 +4,20 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // Import my React components
 import Login from 'Login';
-import Main from 'Main';
-import EditObservation from 'EditObservation';
-import ObservationList from 'ObservationList';
-import ObservationDetails from 'ObservationDetails';
+import App from 'App';
+import EditNote from 'EditNote';
+import NoteList from 'NoteList';
+import NoteDetails from 'NoteDetails';
 
 ReactDOM.render(
   <Router history={ browserHistory }>
-  	<Route path="/" component={ Main }>
-  		<Route path="login" component={ Login }/>
-  		<Route path="write" component={ EditObservation }/>
-  		<Route path="view" component={ ObservationDetails }/>
-  		<IndexRoute component={ ObservationList }/>
+  	<Route path="/" component={ App }>
+  		<Route path="login" component={ Login } />
+  		<Route path="write" component={ EditNote } />
+  		<Route path="edit" component={ EditNote } />
+  		<Route path="edit/:id" component={ EditNote } />
+  		<Route path="view" component={ NoteDetails } />
+  		<IndexRoute component={ NoteList } />
   	</Route>
   </Router>,
   document.getElementById('app')

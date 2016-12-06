@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import styles from './EditObservation.scss'
+import styles from './EditNote.scss'
 import { browserHistory } from 'react-router';
 import Field from 'Field';
 
@@ -36,7 +36,7 @@ var EditNote = React.createClass({
 
   render: function() {
     return  <div className="row">
-      <Field type="text" value={ this.state.note.title } name='title' onChange={ this.updateField } error={ this.state.errors.title } placeholder="What is your observation about?" />
+      <Field type="text" value={ this.state.note.title } name='title' onChange={ this.updateField } error={ this.state.errors.title } placeholder="What is your note about?" />
       <Field type="textarea" value={ this.state.note.content } name='content' onChange={ this.updateField } error={ this.state.errors.content } />
       <Field type="text" value={ this.state.note.image } name='image' onChange={ this.updateField } error={ this.state.errors.image } />
       <Field type="text" label="Tags" value={ this.state.note.tags } name='tags' onChange={ this.updateField } error={ this.state.errors.tags } />

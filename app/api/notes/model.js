@@ -18,7 +18,7 @@ var NoteSchema = new mongoose.Schema({
   	required: true
   },
   image: String,
-  tags: Array,
+  tags: [String],
   comments: {
     type: [CommentSchema],
     default: []
@@ -26,7 +26,7 @@ var NoteSchema = new mongoose.Schema({
   likedBy: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'User',
-    default: [],
+    default: []
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

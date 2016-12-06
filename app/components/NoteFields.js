@@ -1,16 +1,16 @@
 import React from 'react';
-import ObservationDetails from 'ObservationDetails';
+import NoteDetails from 'NoteDetails';
 
-var ObservationFields = React.createClass({
+var NoteFields = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<h3>Observation Fields Component</h3>
+				<h3>Note Fields Component</h3>
 				<form>
-					<div><input type="text" onChange={ this.updateFields.title } placeholder="What is your observation about?" /></div>
+					<div><input type="text" onChange={ this.updateFields.title } placeholder="What is your note about?" /></div>
 					<div><textarea onChange={ this.updateFields.content }></textarea></div>
 					<div><input type="file" onChange={ this.updateFields } /></div>
-					<button onClick={ this.doSomething }>Create Observation</button>
+					<button onClick={ this.doSomething }>Create Note</button>
 				</form>
 			</div>
 		);
@@ -24,4 +24,4 @@ var ObservationFields = React.createClass({
 	// }
 });
 
-module.exports = ObservationFields;
+module.exports = NoteFields;

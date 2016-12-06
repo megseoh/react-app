@@ -14,7 +14,7 @@ var NoteSchema = new mongoose.Schema({
     required: true
   },
   content: {
-  	String,
+  	type: String,
   	required: true
   },
   image: String,

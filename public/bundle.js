@@ -37355,19 +37355,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _jquery = __webpack_require__(239);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
 	var _EditNote = __webpack_require__(247);
 
 	var _EditNote2 = _interopRequireDefault(_EditNote);
 
-	var _reactRouter = __webpack_require__(178);
-
 	var _Field = __webpack_require__(234);
 
 	var _Field2 = _interopRequireDefault(_Field);
+
+	var _jquery = __webpack_require__(239);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _reactRouter = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37598,7 +37598,7 @@
 						'Edit'
 					)
 				),
-				_react2.default.createElement(_CommentList2.default, { comments: this.props.comments, postId: this.props.postId })
+				_react2.default.createElement(_CommentList2.default, { comments: this.props.comments, noteId: this.props.noteId })
 			);
 		}
 	});

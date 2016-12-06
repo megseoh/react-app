@@ -10,18 +10,18 @@ var mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/notes');
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/notes");
 
-// var bodyParser = require('body-parser');
-// app.use(bodyParser.json());
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 // Serve bundle.js
 app.use(webpackMiddleware(webpack(require('./webpack.config.js'))));
 
-// Serve your API assets here. You'll need to include the post route file.
+// Serve your API assets here. You'll need to include the note route file.
 app.use(express.static('public'));
 
 // Serve your static assets here. You'll need to use express.static middleware.
 app.use('/app/api/notes', require('./app/api/notes'));
-// require('./api/users/model');
+require('./app/api/users/model');
 
 // If none of the above matches, serve public/index.html.
 app.get('*', (req, res) => {

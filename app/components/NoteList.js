@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteDetails from 'NoteDetails';
+import EditNote from 'EditNote';
 
 var NoteList = React.createClass({
   render: function() {

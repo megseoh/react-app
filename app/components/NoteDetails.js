@@ -16,7 +16,7 @@ var NoteDetails = React.createClass({
 				<div className={ styles.actions }>
 				  <Link to={ '/edit/' + this.props.id }>Edit</Link>
 				</div>
-				<CommentList comments={ this.props.comments } postId={ this.props.postId } />
+				<CommentList comments={ this.props.comments } noteId={ this.props.noteId } />
 			</div>
 		);
 	}

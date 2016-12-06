@@ -3,17 +3,20 @@ module.exports = {
   output: {
     path: __dirname,
     filename: './public/bundle.js'
+    // path: '/',
+    // filename: 'bundle.js'
   },
   resolve: {
     root: __dirname,
     alias: {
       AddObservation: 'app/components/AddObservation.js',
-      Field: 'app/components/Field.js',
+      EditObservation: 'app/components/EditObservation.js',
+      Fields: 'app/components/Fields.js',
       Login: 'app/components/Login.js',
       Main: 'app/components/Main.js',
       Nav: 'app/components/Nav.js',
       ObservationDetails: 'app/components/ObservationDetails.js',
-      ObservationFields: 'app/components/ObservationFields.js',
+      ObservationField: 'app/components/ObservationField.js',
       ObservationList: 'app/components/ObservationList.js'
     },
     extensions: ['', '.js', '.jsx']

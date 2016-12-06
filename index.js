@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/notes');
 mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/notes");
 
+var Promise = require("bluebird");
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 

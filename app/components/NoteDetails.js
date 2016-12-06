@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './NoteDetails.scss';  //TODO: need to actually create & add these styles
+import EditNote from 'EditNote';
 import CommentList from 'CommentList';
 import { Link } from 'react-router';
 

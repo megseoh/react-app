@@ -50,15 +50,13 @@ exports.update = function(req, res) {
   	// note.user = '5834b08bb7395187b292be38';
 
     note.save()
-    .then(function(note) {
-      res.send(note);
-    })
-    .catch(function(err) {
+    .then(() => res.send(note))
+    .catch((err) => {
       res.status(422);
       res.send(err);
     });
   })
-  .catch(() => res.send(404))
+  .catch((err) => res.send(404));
 }
 
 exports.delete = function(req, res) {

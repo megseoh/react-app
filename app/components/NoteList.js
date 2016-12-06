@@ -6,6 +6,8 @@ var NoteList = React.createClass({
   render: function() {
     return  (
       <div className="row">
+      var anything = this.props.data;
+      console.log(anything);
         { this.props.notes.map((note) =>
           <note key={ note._id }
                 id={ note._id }

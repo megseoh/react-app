@@ -7,4 +7,4 @@ var Field = ({ label, value, onChange, name, error, type }) => <div className={ 
   { error ? <div className={ styles.error }>{ error.message }</div> : null }
 </div>
 
-export default Field;
+module.exports = Field;

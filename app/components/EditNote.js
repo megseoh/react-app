@@ -1,14 +1,8 @@
 import React from 'react';
-import $ from 'jquery';
 import styles from './EditNote.scss'
-import { browserHistory } from 'react-router';
 import Field from 'Field';
-
-var Fields = ({ label, value, onChange, name, error, type }) => <div className={ styles.field }>
-  <label>{ label }</label>
-  <input type={ type } value={ value } name={ name } onChange={ onChange } />
-  { error ? <div className={ styles.error }>{ error.message }</div> : null }
-</div>
+import $ from 'jquery';
+import { browserHistory } from 'react-router';
 
 var EditNote = React.createClass({
   getInitialState: function() {

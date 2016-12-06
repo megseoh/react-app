@@ -17,7 +17,7 @@ var NoteList = React.createClass({
                 comments={ note.comments } />
         )}
       </div>
-    )
+    );
   }
 });
 

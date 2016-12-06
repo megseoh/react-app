@@ -26524,10 +26524,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -26564,7 +26560,7 @@
 	  );
 	};
 
-	exports.default = Field;
+	module.exports = Field;
 
 /***/ },
 /* 235 */
@@ -37374,30 +37370,6 @@
 	var _Field2 = _interopRequireDefault(_Field);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Fields = function Fields(_ref) {
-	  var label = _ref.label,
-	      value = _ref.value,
-	      onChange = _ref.onChange,
-	      name = _ref.name,
-	      error = _ref.error,
-	      type = _ref.type;
-	  return _react2.default.createElement(
-	    'div',
-	    { className: _EditNote2.default.field },
-	    _react2.default.createElement(
-	      'label',
-	      null,
-	      label
-	    ),
-	    _react2.default.createElement('input', { type: type, value: value, name: name, onChange: onChange }),
-	    error ? _react2.default.createElement(
-	      'div',
-	      { className: _EditNote2.default.error },
-	      error.message
-	    ) : null
-	  );
-	};
 
 	var EditNote = _react2.default.createClass({
 	  displayName: 'EditNote',

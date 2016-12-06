@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteDetails from 'NoteDetails';
+// not doing anything at this point
 
 var NoteFields = React.createClass({
 	render: function() {

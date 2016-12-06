@@ -37128,7 +37128,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				'div',
-				{ className: _Main2.default.container },
+				{ className: _Main2.default.container + ' container' },
 				_react2.default.createElement(_Nav2.default, null),
 				_react2.default.createElement(
 					'h2',
@@ -37324,6 +37324,7 @@
 	    var _this = _possibleConstructorReturn(this, (ObservationList.__proto__ || Object.getPrototypeOf(ObservationList)).call(this, props));
 
 	    var sample = {
+	      id: 1,
 	      title: "My first Title",
 	      content: "Jelly pastry bear claw muffin candy canes jelly beans chocolate candy canes. Carrot cake tart biscuit danish gummi bears marzipan sweet roll danish pastry.",
 	      image: "https://s-media-cache-ak0.pinimg.com/736x/2e/0e/be/2e0ebe1d29712240d3b29e0051de96c6.jpg",
@@ -37345,7 +37346,8 @@
 	  }, {
 	    key: 'ObservationList',
 	    value: function ObservationList() {
-	      return $.getJSON('https://randomuser.me/api/').then(function (data) {
+	      return $.getJSON('/api/notes') //TODO: connect to my database
+	      .then(function (data) {
 	        return data.results;
 	      });
 	    }
@@ -37357,20 +37359,16 @@
 	      }
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
+	        { className: 'row' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            'Observation List Component'
-	          ),
-	          this.state.notes.map(function (note, i) {
-	            return _react2.default.createElement(_ObservationDetails2.default, { key: note.id, title: note.title, content: note.content, image: note.image, tags: note.tags });
-	          }),
-	          _react2.default.createElement(_AddObservation2.default, null)
-	        )
+	          'h3',
+	          null,
+	          'Observation List Component'
+	        ),
+	        this.state.notes.map(function (note, i) {
+	          return _react2.default.createElement(_ObservationDetails2.default, { key: note.id, title: note.title, content: note.content, image: note.image, tags: note.tags });
+	        }),
+	        _react2.default.createElement(_AddObservation2.default, null)
 	      );
 	    }
 	  }]);
@@ -37409,7 +37407,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				"div",
-				null,
+				{ className: "row" },
 				_react2.default.createElement(
 					"h3",
 					null,
@@ -37460,7 +37458,7 @@
 		render: function render() {
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ className: 'row' },
 				_react2.default.createElement(
 					'h3',
 					null,

@@ -11,7 +11,7 @@ var AddObservation = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div className="row">
 				<h3>Add Observation Component</h3>
 				<form onSubmit={ this.onButtonClick}>
 					<input type='text' />

@@ -5,7 +5,7 @@ import styles from './Main.scss';
 var Main = React.createClass({
 	render: function() {
 		return (
-			<div className={ styles.container }>
+			<div className={ styles.container + ' container'}>
 				<Nav />
 				<h2>Main Component</h2>
 				{this.props.children}

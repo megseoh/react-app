@@ -11,6 +11,7 @@ var App = React.createClass({
 	},
 
 	render: function() {
+		console.log('App level', this)
 		return (
 			<div className={ styles.container + ' container'}>
 				<Nav />
@@ -24,7 +25,9 @@ var App = React.createClass({
 	},
 
 	refresh: function() {
-		$.get('/api/notes', (data) => this.setState({ notes: data }));
+		// getting index.html
+		$.get('app/api/notes/', (data) => this.setState({ notes: data }));
+		console.log('refresh')
 	},
 
 	componentDidMount: function() {

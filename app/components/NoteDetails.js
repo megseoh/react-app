@@ -9,15 +9,14 @@ var NoteDetails = React.createClass({
 		return (
 			<div className="row">
 				<h3>Note Details Component</h3>
-				<h3 className={ styles.title }>{ this.props.title }</h3>
-				<p className={ styles.user }>{ this.props.user.name } posted:</p>
-				<p className={ styles.content }>{ this.props.content }</p>
-				<img className={ styles.image } src={ this.props.image} />
-				<p className={ styles.tags }>{ this.props.tags }</p>
+				<div className={ styles.title }>{ this.props.title }</div>
+				<div className={ styles.user }>{ this.props.user }</div>
+				<div className={ styles.content }>{ this.props.content }</div>
+				<div className={ styles.image }><img src={ this.props.image} /></div>
+				<div className={ styles.tags }>{ this.props.tags }</div>
 				<div className={ styles.actions }>
 				  <Link to={ '/edit/' + this.props.id }>Edit</Link>
 				</div>
-				<CommentList comments={ this.props.comments } noteId={ this.props.noteId } />
 			</div>
 		);
 	}

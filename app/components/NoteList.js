@@ -1,26 +1,24 @@
 import React from 'react';
 import NoteDetails from 'NoteDetails';
-import EditNote from 'EditNote';
+// import EditNote from 'EditNote';
+// import App from 'App';
 
 var NoteList = React.createClass({
   render: function() {
-    return  (
+    console.log('HERE', this);
+    return (
       <div className="row">
-      var anything = this.props.data;
-      console.log(anything);
         { this.props.notes.map((note) =>
-          <note key={ note._id }
-                id={ note._id }
+          <NoteDetails key={ note.id }
+                id={ note.id }
                 title={ note.title }
+                user={ note.user }
                 content={ note.content }
                 image={ note.image }
-                tags={ note.tags }
-                user={ note.user }
-                likedBy={ note.likedBy }
-                comments={ note.comments } />
+                tags={ note.tags } />
         )}
       </div>
-    );
+    )
   }
 });
 

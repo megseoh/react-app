@@ -3,7 +3,7 @@ import AddNote from 'AddNote';
 import NoteDetails from 'NoteDetails';
 
 // http://stackoverflow.com/questions/38742334/what-is-right-way-to-do-api-call-in-react-js
-export default class NoteList extends React.Component {
+export default class NoteListOld extends React.Component {
   constructor(props) {
     super(props);
 
@@ -50,4 +50,4 @@ export default class NoteList extends React.Component {
   }
 }
 
-module.exports = NoteList;
+module.exports = NoteListOld;

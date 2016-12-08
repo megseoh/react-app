@@ -35,4 +35,5 @@ var NoteSchema = new mongoose.Schema({
   }
 });
 
+// create a model & make this available
 module.exports = mongoose.model('Note', NoteSchema);

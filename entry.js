@@ -12,12 +12,12 @@ import NoteDetails from 'NoteDetails';
 ReactDOM.render(
   <Router history={ browserHistory }>
   	<Route path="/" component={ App }>
+      <IndexRoute component={ NoteList } />
   		<Route path="login" component={ Login } />
   		<Route path="write" component={ EditNote } />
   		<Route path="edit" component={ EditNote } />
   		<Route path="edit/:id" component={ EditNote } />
   		<Route path="view" component={ NoteDetails } />
-  		<IndexRoute component={ NoteList } />
   	</Route>
   </Router>,
   document.getElementById('app')

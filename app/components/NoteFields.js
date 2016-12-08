@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteDetails from 'NoteDetails';
 // not doing anything at this point
+// look at Field.js or EditNote.js
 
 var NoteFields = React.createClass({
 	render: function() {
@@ -10,7 +11,7 @@ var NoteFields = React.createClass({
 				<form>
 					<div><input type="text" onChange={ this.updateFields.title } placeholder="What is your note about?" /></div>
 					<div><textarea onChange={ this.updateFields.content }></textarea></div>
-					<div><input type="file" onChange={ this.updateFields } /></div>
+					<div><input type="text" onChange={ this.updateFields.image } /></div>
 					<button onClick={ this.doSomething }>Create Note</button>
 				</form>
 			</div>

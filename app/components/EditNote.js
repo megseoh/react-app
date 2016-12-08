@@ -40,10 +40,10 @@ var EditNote = React.createClass({
 
   save: function() {
     if (this.state.isEditing) {
-      var url = '/api/notes/' + this.props.params.id;
+      var url = 'app/api/notes/' + this.props.params.id;
       var method = 'PUT';
     } else {
-      var url = '/api/notes';
+      var url = 'app/api/notes';
       var method = 'POST';
     }
 

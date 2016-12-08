@@ -1,10 +1,10 @@
 module.exports = {
   entry: './entry.js',
   output: {
-    path: __dirname,
-    filename: './public/bundle.js'
-    // path: '/',
-    // filename: 'bundle.js'
+    // path: __dirname,
+    // filename: './public/bundle.js'
+    path: '/',
+    filename: 'bundle.js'
   },
   resolve: {
     root: __dirname,
